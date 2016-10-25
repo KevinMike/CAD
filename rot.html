@@ -1,0 +1,75 @@
+<div class="ejemplo-linea">
+    <div style="position: relative; height: 200px;">
+        <canvas id="canvas-2" width="400" height="200"
+                style="border: blue solid 1px; background-color: aqua;
+        position: absolute; z-index: 0;">
+            <span style="color: red">Elemento
+            <b>canvas</b> no soportado.</span>
+        </canvas>
+        <canvas id="canvas-rejilla-2" width="400" height="200"
+                style="border: blue solid 1px; background-color: transparent;
+        position: absolute; z-index: 1;">
+            <span style="color: red">Elemento
+            <b>canvas</b> no soportado.</span>
+        </canvas>
+    </div>
+    <div>
+        <input type="button" value="trazar"
+               onclick="trazarCnv2()" />
+        <input type="button" value="borrar"
+               onclick="borrarCnv2()" />
+        <input type="button" value="girar derecha"
+               onclick="girarDerecha2()" />
+        <input type="button" value="girar izquierda"
+               onclick="girarIzquierda2()" />
+    </div>
+</div>
+<script>
+    var angulo2 = 2*Math.PI/60;
+    var canvasR2 = document.getElementById("canvas-rejilla-2");
+    var cnvR2 = null;
+    if (canvasR2.getContext) cnvR2 = canvasR2.getContext("2d");
+    cnvR2.beginPath();
+    cnvR2.strokeStyle = "blue";
+    cnvR2.moveTo(0, canvasR2.height/2);
+    cnvR2.lineTo(canvasR2.width, canvasR2.height/2);
+    cnvR2.stroke();
+    cnvR2.closePath();
+    cnvR2.beginPath();
+    cnvR2.moveTo(canvasR2.width/2, 0);
+    cnvR2.lineTo(canvasR2.width/2, canvasR2.height);
+    cnvR2.stroke();
+    cnvR2.closePath();
+    var canvas2 = document.getElementById("canvas-2");
+    var cnv2 = null;
+    if (canvas2.getContext) cnv2 = canvas2.getContext("2d");
+    var texto = "CANVAS";
+    var altoTexto = 48;
+    cnv2.lineWidth = 2;
+    cnv2.font = "italic bold " + altoTexto + "px Courier New";
+    var objTexto = cnv2.measureText(texto);
+    var anchoTexto = objTexto.width;
+    cnv2.translate(canvas2.width/2, canvas2.height/2);
+    trazarCnv2();
+    function trazarCnv2(){
+        cnv2.fillStyle = "yellow";
+        cnv2.fillRect(0, 0, canvas2.width,canvas2.height);
+        cnv2.strokeStyle = "navy";
+        cnv2.strokeText(texto,-anchoTexto/2,altoTexto/4);
+        cnv2.fillStyle = "lime";
+        cnv2.fillText(texto,-anchoTexto/2,altoTexto/4);
+    }
+    function borrarCnv2(){
+        cnv2.clearRect(-canvas2.width/2, -canvas2.height/2, canvas2.width, canvas2.height);
+    }
+    function girarDerecha2(){
+        borrarCnv2();
+        cnv2.rotate(angulo2);
+        trazarCnv2();
+    }
+    function girarIzquierda2(){
+        borrarCnv2();
+        cnv2.rotate(-angulo2);
+        trazarCnv2();
+    }
+</script>

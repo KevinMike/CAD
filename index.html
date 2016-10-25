@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <title>Diseño Asistido por computadora</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="css/estilos.css"/>
+</head>
+<body onload="main()">
+    <header>
+        <nav class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Lineas<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" onclick="CambiarMetodo(0,0)">Método Directo</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#" onclick="CambiarMetodo(0,1)">ADD Simple</a></li>
+                        <li><a href="#" onclick="CambiarMetodo(0,2)">ADD Entero</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Circulos <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" onclick="CambiarMetodo(1,0)">Representación Implícita</a></li>
+                        <li><a href="#" onclick="CambiarMetodo(1,1)">Representación Parametrica Polar</a></li>
+                        <li><a href="#" onclick="CambiarMetodo(1,2)">Representación Incremental</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Polígono<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" onclick="CambiarMetodo(2,0)">Método Directo</a></li>
+                        <li><a href="#" onclick="CambiarMetodo(2,1)">ADD Simple</a></li>
+                        <li><a href="#" onclick="CambiarMetodo(2,2)">ADD Entero</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Recortes<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" onclick="CambiarMetodo(3,0)">Algoritmo de Cohen-Sutherland</a></li>
+                        <li><a href="#" onclick="CambiarMetodo(3,1)">Algoritmo de Sutherland - Hodgman</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Transformaciones<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" onclick="CambiarMetodo(4,0)">Traslacion</a></li>
+                        <li><a href="#" onclick="CambiarMetodo(4,1)">Rotación</a></li>
+                        <li><a href="#" onclick="CambiarMetodo(4,2)">Escalamiento</a></li>
+                        <li><a href="#" onclick="CambiarMetodo(4,3)">Afilamiento en Y</a></li>
+                        <li><a href="#" onclick="CambiarMetodo(4,4)">Afilamiento en X</a></li>
+                        <li><a href="#" onclick="CambiarMetodo(4,5)">Reflexion</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Datos Personales</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <div class="container">
+            <ul class="breadcrumb">
+                <li id="li_forma"></li>
+                <li id="li_metodo" class="active"></li>
+            </ul>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Coordenadas: <span id="coordenadas" ></span>
+                </div>
+                <div class="panel-body">
+                    <canvas id="canvas2D" width="800" height="600">
+                        Porfavor, cambie su navegador.
+                    </canvas>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+</body>
+<script src="js/assets/jquery-2.1.4.min.js"></script>
+<script src="js/assets/bootstrap.min.js"></script>
+<script src="js/core.js"></script>
+<script src="js/funciones.js"></script>
+<script src="js/main.js"></script>
+</html>
+
